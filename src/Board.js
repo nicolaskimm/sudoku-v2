@@ -1,5 +1,6 @@
 import React from 'react';
 import Tile from './Tile'
+import './Board.css';
 
 const Board = props => {
   const currentSudoku = props.sudoku.split("");
@@ -14,7 +15,7 @@ const Board = props => {
       noedit={(initialSudoku[index] === "." ) ? false : true}
     />
   )
-  return sudokuInput
+  return <div className='board-grid'>{sudokuInput}</div>
 }
 
 export default Board;

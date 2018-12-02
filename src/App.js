@@ -1,6 +1,7 @@
 import React from "react";
 import sudoku from "sudoku-umd";
 import Board from "./Board";
+import './App.css';
 
 
 class App extends React.Component {
@@ -62,11 +63,11 @@ class App extends React.Component {
     }
 
     checkSudoku() {
-        const finalSudoku = sudoku.solve(this.state.initialSudoku)
+        const finalSudoku = sudoku.solve(this.state.initialSudoku);
         if (finalSudoku === this.state.currentSudoku) {
-            alert('Wygrałeś!');
+            alert('You won!');
         } else {
-            alert('Niestety nie.');
+            alert('Sorry, try again.');
         }
     }
 
@@ -82,19 +83,23 @@ class App extends React.Component {
 
     render() {
         return (
-            <div>
-                <Board 
-                    sudoku={this.state.currentSudoku}
-                    initial={this.state.initialSudoku}
-                    onChange={this.handleChange}
-                />
-                <div className="buttons">
-                    <button onClick = {this.checkSudoku.bind(this)}>Check</button>
-                    <button onClick = {this.newGame.bind(this)}>New game</button>
-                    <button onClick = {this.solveSudoku.bind(this)}>Solve</button>
-                    <button onClick = {this.restart.bind(this)}>Restart</button>
+            <div className='sudoku'>
+                <h1 className='sudoku_title'> Sudoku </h1>
+                <div className='sudoku_board'>
+                    <Board 
+                        sudoku={this.state.currentSudoku}
+                        initial={this.state.initialSudoku}
+                        onChange={this.handleChange}
+                    />
+                    <div className="sudoku_buttons">
+                        <button onClick = {this.checkSudoku.bind(this)}>Check</button>
+                        <button onClick = {this.newGame.bind(this)}>New game</button>
+                        <button onClick = {this.solveSudoku.bind(this)}>Solve</button>
+                        <button onClick = {this.restart.bind(this)}>Restart</button>
+                    </div>
                 </div>
             </div>
+            
         )
     }
 }

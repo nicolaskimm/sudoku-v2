@@ -1,7 +1,8 @@
 import React from 'react';
+import './Tile.css';
 
 const Tile = props => (
-  <input 
+  <input
     min='1'
     max='9'
     type='number'

@@ -1,0 +1,25 @@
+input {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #375c99;
+    box-sizing: border-box;
+    border: 1px solid #375c99;
+}
+
+input:disabled {
+    background-color: #375c99;
+    color: white;
+}
+
+input:nth-child(3n) {
+    margin-right: 10px;
+}
+
+input:nth-child(n+19):nth-child(-n+27) {
+    margin-bottom: 10px;
+}
+
+input:nth-child(n+46):nth-child(-n+54) {
+    margin-bottom: 10px;
+}
