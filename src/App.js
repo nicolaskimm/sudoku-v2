@@ -20,15 +20,9 @@ class App extends React.Component {
     handleChange(e) {
         e.preventDefault();
 
-        console.log(e.target.value)
-        console.log(e.target.id)
-        console.log(this.state.currentSudoku)
-
         let current = this.state.currentSudoku.split("")
-        current[e.target.id] = e.target.value
-        console.log(current)
-        current = current.join("")
-        console.log(current)
+        current[e.target.id] = e.target.value;
+        current = current.join("");
 
         this.setState({
            currentSudoku: current
@@ -37,19 +31,8 @@ class App extends React.Component {
     }
 
     restart() {
-        this.setState((prevState) => {
-            return {
-                initialSudoku: prevState.initialSudoku,
-                currentSudoku: prevState.initialSudoku
-            }
-          });
-    }
-
-    restartOld() {
-        this.setState({
-                initialSudoku: this.state.initialSudoku,
-                currentSudoku: this.state.initialSudoku
-          });
+        const initial = this.state.initialSudoku;
+        this.setState({currentSudoku: initial })
     }
 
     newGame() {
@@ -58,8 +41,6 @@ class App extends React.Component {
             initialSudoku: newBoard,
             currentSudoku: newBoard
         })
-
-        console.log(newBoard)
     }
 
     checkSudoku() {
@@ -76,8 +57,6 @@ class App extends React.Component {
         this.setState({
             currentSudoku: finalSudoku
         })
-
-        console.log(this.state.currentSudoku);
     }
 
 

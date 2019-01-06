@@ -10,8 +10,8 @@ const Board = props => {
     <Tile
       key={index}
       id={index}
-      value={(value === ".") ? undefined : value}
-      onChange={(initialSudoku[index] === ".") ? props.onChange : undefined}
+      value={(value === ".") ? '' : value}
+      onChange={(initialSudoku[index] === ".") ? props.onChange : false}
       noedit={(initialSudoku[index] === "." ) ? false : true}
     />
   )
