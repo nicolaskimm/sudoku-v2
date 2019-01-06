@@ -1,16 +1,18 @@
 input {
-    margin: 0;
+    height: 45px;
+    width: 45px;
     padding: 0;
     text-align: center;
-    color: #375c99;
-    box-sizing: border-box;
-    border: 1px solid #375c99;
+    color: #fafafa;
+    border: 1px solid white;
+    background-color: rgb(180, 48, 48);
 }
 
 input:disabled {
-    background-color: #375c99;
+    background-color: #203b66;
     color: white;
 }
+
 
 input:nth-child(3n) {
     margin-right: 10px;
