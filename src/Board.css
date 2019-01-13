@@ -1,11 +1,13 @@
 .board-grid {
-
+    width: 443px;
     display: grid;
     grid-template-columns: repeat(9, auto);
-    grid-template-rows: repeat(9, auto);
 
-    align-self: center;
-    
-    
+}
+
+@media screen and (max-width: 479px) {
+    .board-grid {
+        width: 253px;
+    }
 }
 

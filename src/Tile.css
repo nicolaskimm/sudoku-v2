@@ -2,20 +2,24 @@ input {
     height: 45px;
     width: 45px;
     padding: 0;
+    font-size: 15px;
     text-align: center;
     color: #fafafa;
     border: 1px solid white;
-    background-color: rgb(180, 48, 48);
+    background-color: #3c5a8b;
 }
 
 input:disabled {
-    background-color: #203b66;
+    background-color: rgb(0, 0, 0);
     color: white;
 }
 
-
 input:nth-child(3n) {
     margin-right: 10px;
+}
+
+input:nth-child(9n) {
+    margin-right: 0;
 }
 
 input:nth-child(n+19):nth-child(-n+27) {
@@ -25,3 +29,28 @@ input:nth-child(n+19):nth-child(-n+27) {
 input:nth-child(n+46):nth-child(-n+54) {
     margin-bottom: 10px;
 }
+
+
+@media screen and (max-width: 479px) {
+    input {
+        height: 25px;
+        width: 25px;
+        font-size: 10px;
+    }
+
+    input:nth-child(3n) {
+        margin-right: 5px;
+    }
+
+    input:nth-child(9n) {
+        margin-right: 0;
+    }
+
+    input:nth-child(n+19):nth-child(-n+27) {
+        margin-bottom: 5px;
+    }
+
+    input:nth-child(n+46):nth-child(-n+54) {
+        margin-bottom: 5px;
+    }
+} 

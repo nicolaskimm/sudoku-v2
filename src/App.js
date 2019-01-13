@@ -64,15 +64,17 @@ class App extends React.Component {
         return (
             <div className='sudoku'>
                 <h1 className='sudoku_title'> Sudoku </h1>
-                <div className='sudoku_board'>
-                    <Board 
-                        sudoku={this.state.currentSudoku}
-                        initial={this.state.initialSudoku}
-                        onChange={this.handleChange}
-                    />
-                    <div className="sudoku_buttons">
+                <div className='sudoku_container'>
+                    <div className='sudoku_container-board'>
+                        <Board 
+                            sudoku={this.state.currentSudoku}
+                            initial={this.state.initialSudoku}
+                            onChange={this.handleChange}
+                        />
+                    </div>
+                    <div className="sudoku_container-buttons">
                         <button onClick = {this.checkSudoku.bind(this)}>Check</button>
-                        <button onClick = {this.newGame.bind(this)}>New game</button>
+                        <button onClick = {this.newGame.bind(this)}>New</button>
                         <button onClick = {this.solveSudoku.bind(this)}>Solve</button>
                         <button onClick = {this.restart.bind(this)}>Restart</button>
                     </div>
